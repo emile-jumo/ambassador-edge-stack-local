@@ -16,7 +16,7 @@
 
 ## How to run the ambassador stack locally
 1. `minikube start --vm-driver=hyperkit`
-2. From the [official guide](https://www.getambassador.io/user-guide/getting-started/#install-the-ambassador-edge-stack) from Ambassador:
+2. From the [official guide](https://www.getambassador.io/user-guide/getting-started/#install-the-ambassador-edge-stack) of Ambassador:
 	```
 	kubectl apply -f https://www.getambassador.io/yaml/aes-crds.yaml && \
 	kubectl wait --for condition=established --timeout=90s crd -lproduct=aes && \
