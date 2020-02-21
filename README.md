@@ -25,10 +25,10 @@
 	```
 3. Use `minikube tunnel` to expose the load balancer.
 4. Get your cluster IP: `kubectl get -n ambassador service ambassador -o json | jq '.spec.clusterIP'`
-5. Go to `http://<yourClusterIp>` to view the dashboard
+5. Go to `http://<yourClusterIp>` to view the dashboard. Note that the certificate is not loaded in the browser and therefore the browser will complain that the site is unsafe to visit.
 6. Create a service: `kubectl apply -f services/hello-world.yaml`
 7. Create a mapping: `kubectl apply -f mappings/hello-world-backend.yaml`
-8. `https://<yourClusterIp>/helloworld/`
+8. `curl -lK https://<yourClusterIp>/helloworld/`
 
 ## Useful links
 [kube-ps1](https://github.com/jonmosco/kube-ps1) is very useful to have the current Kubernetes context and namespace configured in your terminal.
